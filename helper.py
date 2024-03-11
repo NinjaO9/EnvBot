@@ -2,6 +2,8 @@
 import main
 from datetime import date
 
+bot = main.bot
+
 def getArticles(keywords,count,date):
     articles = main.newsapi.get_everything(q=(f"{keywords}"), language="en", from_param=date)["articles"]
     return articles[:int(verifyCountIntegrity(count))]
@@ -44,11 +46,23 @@ def formatNews(news):
                 return message
             message = message + (f"{article['title']}: \n {article['url']} \n")
     return message
-            
 
 def getActiveChannel(channel):
+    global active_channel
     try:
-        active_channel = main.client.get_channel(int(verifyChannelIntegrity(channel)))
+        active_channel = bot.get_channel(int(verifyChannelIntegrity(channel)))
         return active_channel
     except Exception as e:
         print("No channel ID, or invalid channel ID was given")
+
+def setGlobalActiveChannel(channel):
+    global active_channel
+    active_channel = channel
+
+def getGlobalActiveChannel():
+    global active_channel
+    try:
+        return active_channel
+    except Exception as e:
+        if active_channel != None:
+            print(f"No active channel set? {e}")
