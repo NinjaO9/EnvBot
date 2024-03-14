@@ -39,6 +39,6 @@ for file in command_list:
     bot.load_extension(file)
 bot.run(token=bottoken)
 
-
-
-"plastic pollution recycle energy plants waste" # Just a dummy string to use as a test for articles
+#-------------------------------------------------------
+# Envbot by NinjaO9 @https://github.com/NinjaO9/EnvBot
+#-------------------------------------------------------

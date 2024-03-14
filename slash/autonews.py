@@ -13,7 +13,7 @@ class autonews(commands.Cog):
     async def autoNews(self, Interaction:Interaction, keywords:str, channel:str):
         global autokeywords, autofetch
         try:
-            news = (helper.getArticles(keywords, None, "2024-03-01", "relevancy"))
+            news = (helper.getArticles(keywords, None, "2024-01-01", "relevancy"))
             message = ''
             autokeywords = keywords
             try:
@@ -41,8 +41,8 @@ class autonews(commands.Cog):
         while self.running:
             try:
                 time = "2024-03-01"
-                await asyncio.sleep(10) # recheck every second TODO: MAKE THIS INTO 1 HOUR (6000)
-                news = helper.getArticles(autokeywords, "4", helper.getCurrentDay(), "relevancy")
+                await asyncio.sleep(6000) # In seconds (60 = 1 min)
+                news = helper.getArticles(autokeywords, "1", helper.getCurrentDay(), "relevancy")
                 message = helper.formatNews(news)
                 await active_channel.send(message)
             except Exception as e:
