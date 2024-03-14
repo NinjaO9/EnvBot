@@ -3,11 +3,11 @@ import main
 from datetime import date
 
 bot = main.bot
-blacklist = [] #blacklist of articles that should no longer appear on messages sent by the bot.
+blacklist = [] #blacklist of news that should no longer appear on messages sent by the bot.
 
-def getArticles(keywords,count,time,sortby):
+def getArticles(keywords,count,time,sortBy):
     global blacklist
-    articles = main.newsapi.get_everything(q=(f"{keywords}"), language="en", from_param=time, sort_by=sortby)["articles"]
+    articles = main.newsapi.get_everything(q=(f"{keywords}"), language="en", from_param=time, sort_by=sortBy)["articles"]
     articles = list(filter( lambda item: item not in blacklist, articles))
     articles = articles[:int(verifyCountIntegrity(count))]
     blacklist = blacklist + articles
