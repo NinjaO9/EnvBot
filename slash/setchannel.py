@@ -8,7 +8,7 @@ class setchannel(commands.Cog):
     global active_channel
     bot = main.bot
 
-    @nextcord.slash_command(name="setchannel",description="sets the channel where further commands will be executed")
+    @nextcord.slash_command(name="setchannel",description="Sets the channel where further commands will be executed")
     async def setChannel(self,Interaction:Interaction, channel: str):
         global active_channel
         try:

@@ -8,10 +8,10 @@ class getnews(commands.Cog):
     bot = main.bot
 
     @nextcord.slash_command(name="retrievenews", description="See news concerning enviornmental science")
-    async def getNews(self, Interation:Interaction, keywords:str, count:Optional[str], channel: Optional[str], date: Optional[str]):          
+    async def getNews(self, Interation:Interaction, keywords:str, count:Optional[str], channel: Optional[str], time: Optional[str], sortby: Optional[str]):          
         global active_channel
         try:
-            news = (helper.getArticles(keywords, count, date))
+            news = (helper.getArticles(keywords, count, time, sortby))
             if channel != None:
                 active_channel = helper.getActiveChannel(channel)
             if news == []:

@@ -3,10 +3,15 @@ import main
 from datetime import date
 
 bot = main.bot
+blacklist = [] #blacklist of news that should no longer appear on messages sent by the bot.
 
-def getArticles(keywords,count,date):
-    articles = main.newsapi.get_everything(q=(f"{keywords}"), language="en", from_param=date)["articles"]
-    return articles[:int(verifyCountIntegrity(count))]
+def getArticles(keywords,count,time,sortBy):
+    global blacklist
+    articles = main.newsapi.get_everything(q=(f"{keywords}"), language="en", from_param=time, sort_by=sortBy)["articles"]
+    articles = list(filter( lambda item: item not in blacklist, articles))
+    articles = articles[:int(verifyCountIntegrity(count))]
+    blacklist = blacklist + articles
+    return articles
 
 def verifyCountIntegrity(count: str):
     if count == None:
@@ -25,14 +30,14 @@ def verifyChannelIntegrity(channel:str):
     else:
         return None
 
-def verifyDateIntegrity(date:str):
-    datechar = list(date)
+def verifyDateIntegrity(time:str):
+    datechar = list(time)
     temp = ''
     datechar.pop[4]
     datechar.pop[6] #pop where the "-" should be in the dates "####-##-##"
     temp = str(datechar)
     if temp.isdigit():
-        return date
+        return time
     else:
         return "2024-01-01"
     
