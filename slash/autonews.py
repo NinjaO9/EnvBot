@@ -12,6 +12,7 @@ class autonews(commands.Cog):
     @nextcord.slash_command(name="startautonews", description="Makes the bot automatically send any recent news when found")
     async def autoNews(self, Interaction:Interaction, keywords:str, channel:str):
         global autokeywords, autofetch
+        print("Running 'Auto News' command...")
         try:
             news = (helper.getArticles(keywords, None, "2024-01-01", "relevancy"))
             message = ''
@@ -40,7 +41,6 @@ class autonews(commands.Cog):
     async def fetchNews(self, active_channel, autokeywords):
         while self.running:
             try:
-                time = "2024-03-01"
                 await asyncio.sleep(6000) # In seconds (60 = 1 min)
                 news = helper.getArticles(autokeywords, "1", helper.getCurrentDay(), "relevancy")
                 message = helper.formatNews(news)

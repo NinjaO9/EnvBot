@@ -2,7 +2,7 @@
 # Gets the keys from keys.txt in the order of newsapi, bot token, serverid (Should mirror top to bottom of keys.txt)
 
 # Initalize Variables
-file = open('devkeys.txt', 'r') # TODO: CHANGE THIS FROM 'devkeys.txt' TO 'keys.txt' WHEN READY
+file = open('keys.txt', 'r')
 key_list = []
 temp_list = []
 content = file.readlines()

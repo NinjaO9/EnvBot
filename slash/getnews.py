@@ -10,6 +10,7 @@ class getnews(commands.Cog):
     @nextcord.slash_command(name="retrievenews", description="See news concerning enviornmental science")
     async def getNews(self, Interation:Interaction, keywords:str, count:Optional[str], channel: Optional[str], time: Optional[str], sortby: Optional[str]):          
         global active_channel
+        print(f"Running 'Retrieve News' command...")
         try:
             news = (helper.getArticles(keywords, count, time, sortby))
             if channel != None:

@@ -1,5 +1,4 @@
 # Replace each key/id/token with your own. If you for some reason need to add lines to this file, make sure you add a "#" before writing anything.
-# I recommend using notepad to open this file. 
 # Getting your newsapi key: https://newsapi.org
 # Getting your discord bot token: https://discord.com/developers/docs/topics/oauth2
 # Getting your server id: https://support-dev.discord.com/hc/en-us/articles/360028717192-Where-can-I-find-my-Application-Team-Server-ID

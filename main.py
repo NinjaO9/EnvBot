@@ -1,3 +1,4 @@
+import asyncio
 import nextcord
 import getkeys
 import os
@@ -36,6 +37,7 @@ async def on_ready():
 
 
 for file in command_list:
+    print(f"loading '{file[6:]}' command...")
     bot.load_extension(file)
 bot.run(token=bottoken)
 

@@ -1,4 +1,4 @@
-This discord bot is a self-hosted bot. You will have to provide your own bot token, server id, and newsapi key to use it. Instructions on how to find the required fields are in the 'keys.txt' file.
+This discord bot is a self-hosted bot. You will have to provide your own bot token, server id, and newsapi key to use it. Instructions on how to find the required fields are in the 'keys.txt' file. I would recommend opening it with Notepad.
 
 The intention of this bot is to the search the internet and find articles that are atleast in some way related to keywords put in by the user. Some articles may be exactly what you are looking for and others may seem to steer off course.
 

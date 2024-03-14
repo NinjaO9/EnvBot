@@ -8,6 +8,7 @@ class resetblacklist(commands.Cog):
 
     @nextcord.slash_command(name="reset_blacklist", description="Resets the current blacklist for autonews")
     async def resetList(self, Interaction: Interaction):
+        print(f"Running 'Reset Blacklist' command...")
         helper.blacklist = []
         Interaction.response.send_message(f"The blacklist has been reset!")
 

@@ -10,6 +10,7 @@ class setchannel(commands.Cog):
 
     @nextcord.slash_command(name="setchannel",description="Sets the channel where further commands will be executed")
     async def setChannel(self,Interaction:Interaction, channel: str):
+        print(f"Running 'Set Channel' command...")
         global active_channel
         try:
             active_channel = self.bot.get_channel(int(helper.verifyChannelIntegrity(channel)))

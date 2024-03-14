@@ -9,6 +9,7 @@ class offnews(commands.Cog):
 
     @nextcord.slash_command(name="stopautonews", description="Stops bot from sending news")
     async def offNews(self,Interaction:Interaction):
+        print(f"Running 'Stop Auto News' command...")
         global running
         running = False
         try:
