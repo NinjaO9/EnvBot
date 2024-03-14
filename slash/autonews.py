@@ -2,7 +2,6 @@ import nextcord
 import main, helper, asyncio
 from nextcord import Interaction
 from nextcord.ext import commands
-from datetime import date
 
 class autonews(commands.Cog):
     global autofetch
@@ -14,7 +13,7 @@ class autonews(commands.Cog):
     async def autoNews(self, Interaction:Interaction, keywords:str, channel:str):
         global autokeywords, autofetch
         try:
-            news = (helper.getArticles(keywords, None, "2024-03-01"))
+            news = (helper.getArticles(keywords, None, "2024-03-01", "relevancy"))
             message = ''
             autokeywords = keywords
             try:
@@ -22,7 +21,7 @@ class autonews(commands.Cog):
             except:
                 print("This error probably occured because an auto command is being ran")
             if news == []:
-                await Interaction.response.send_message(content=f"There were no articles with the keyword '{keywords}' found as of {date}", ephemeral=True)
+                await Interaction.response.send_message(content=f"There were/are no more articles with the keyword '{keywords}' found !", ephemeral=True)
             else:
                 message = helper.formatNews(news)
                 try:
@@ -39,12 +38,11 @@ class autonews(commands.Cog):
             await Interaction.response.send_message(content=f"An Error Occured: {e}", ephemeral=True)
 
     async def fetchNews(self, active_channel, autokeywords):
-        global running
         while self.running:
             try:
-                date = "2024-03-01"
+                time = "2024-03-01"
                 await asyncio.sleep(10) # recheck every second TODO: MAKE THIS INTO 1 HOUR (6000)
-                news = helper.getArticles(autokeywords, "4", date)
+                news = helper.getArticles(autokeywords, "4", helper.getCurrentDay(), "relevancy")
                 message = helper.formatNews(news)
                 await active_channel.send(message)
             except Exception as e:
