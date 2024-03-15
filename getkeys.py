@@ -1,6 +1,3 @@
-# GetKeys.py
-# Gets the keys from keys.txt in the order of newsapi, bot token, serverid (Should mirror top to bottom of keys.txt)
-
 # Initalize Variables
 file = open('keys.txt', 'r')
 key_list = []
