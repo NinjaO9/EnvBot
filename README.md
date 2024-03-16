@@ -5,8 +5,6 @@ The intention of this bot is to the search the internet and find articles that a
 IMPORTANT: You will need to install the lastest version of Python (if that doesn't work, I have been using 3.9.6). Afterwards, you will need to run 'pip install -r requirements.txt' inside of a terminal for the EnvBot source code folder. 
 (ex: C:/Downloads/EnvBot> pip install -r requirements.txt)
 
-Invite the bot to your server with this link: https://discord.com/oauth2/authorize?client_id=1195541295947583550&permissions=2148002880&scope=bot
-
 ###################################
 
 Q: How do I format the 'time'?
