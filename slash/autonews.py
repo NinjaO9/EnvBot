@@ -9,7 +9,7 @@ class autonews(commands.Cog):
     background_tasks = set()
     running = False
 
-    @nextcord.slash_command(name="startautonews", description="Makes the bot automatically send any recent news when found")
+    @nextcord.slash_command(name="startautonews", description="Makes the bot automatically send any recent news every hour")
     async def autoNews(self, Interaction:Interaction, keywords:str, channel:str):
         global autokeywords, autofetch
         print("Running 'Auto News' command...")
