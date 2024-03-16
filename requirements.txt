@@ -1,0 +1,2 @@
+newsapi_python==0.2.7
+nextcord==2.6.0

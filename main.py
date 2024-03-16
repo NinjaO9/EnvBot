@@ -1,4 +1,3 @@
-import asyncio
 import nextcord
 import getkeys
 import os
