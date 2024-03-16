@@ -2,6 +2,9 @@ This discord bot is a self-hosted bot. You will have to provide your own bot tok
 
 The intention of this bot is to the search the internet and find articles that are atleast in some way related to keywords put in by the user. Some articles may be exactly what you are looking for and others may seem to steer off course.
 
+IMPORTANT: You will need to install the lastest version of Python (if that doesn't work, I have been using 3.9.6). Afterwards, you will need to run 'pip install -r requirements.txt' inside of a terminal for the EnvBot source code folder. 
+(ex: C:/Downloads/EnvBot> pip install -r requirements.txt)
+
 ###################################
 
 Q: How do I format the 'time'?
