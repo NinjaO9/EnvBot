@@ -14,7 +14,7 @@ class autonews(commands.Cog):
         global autokeywords, autofetch
         print("Running 'Auto News' command...")
         try:
-            news = (helper.getArticles(keywords, None, "2024-01-01", "relevancy"))
+            news = (helper.getArticles(keywords, None, helper.getYesterday(), "relevancy"))
             message = ''
             autokeywords = keywords
             try:
@@ -42,7 +42,7 @@ class autonews(commands.Cog):
         while self.running:
             try:
                 await asyncio.sleep(6000) # In seconds (60 = 1 min)
-                news = helper.getArticles(autokeywords, "1", helper.getCurrentDay(), "relevancy")
+                news = helper.getArticles(autokeywords, "1", helper.getYesterday(), "relevancy")
                 message = helper.formatNews(news)
                 await active_channel.send(message)
             except Exception as e:

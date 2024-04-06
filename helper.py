@@ -1,5 +1,5 @@
 # Python file for all the "background tasks" such as verifying and sorting lists
-import main
+import main, datetime
 from datetime import date
 
 bot = main.bot
@@ -39,10 +39,11 @@ def verifyDateIntegrity(time:str):
     if temp.isdigit():
         return time
     else:
-        return "2024-01-01"
+        return getYesterday()
     
-def getCurrentDay():
-    return date.today()
+def getYesterday():
+    day = date.today()
+    return (day - datetime.timedelta(days=1))
 
 def formatNews(news):
     message = ''
