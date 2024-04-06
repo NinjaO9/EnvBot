@@ -1,0 +1,24 @@
+{
+  "name": "envbot",
+  "version": "1.0.0",
+  "description": "This discord bot is a self-hosted bot. You will have to provide your own bot token, server id, and newsapi key to use it. Instructions on how to find the required fields are in the 'keys.txt' file. I would recommend opening it with Notepad.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apicache": "^1.6.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "needle": "^3.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
