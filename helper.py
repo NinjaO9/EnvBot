@@ -1,5 +1,6 @@
 # Python file for all the "background tasks" such as verifying and sorting lists
 import main, datetime
+import main, datetime
 from datetime import date
 
 bot = main.bot

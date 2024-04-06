@@ -1,5 +1,4 @@
-import nextcord
-import main, helper, asyncio
+import nextcord, main, helper, asyncio
 from nextcord import Interaction
 from nextcord.ext import commands
 
@@ -35,6 +34,7 @@ class autonews(commands.Cog):
                     autofetch = asyncio.create_task(autonews.fetchNews(self, active_channel, autokeywords))
                     await getFetch()
                     self.background_tasks.add(autofetch)
+                    print("You can now dismiss the 'Envbot is thinking...' message!")
         except Exception as e:
             await Interaction.response.send_message(content=f"An Error Occured: {e}", ephemeral=True)
 

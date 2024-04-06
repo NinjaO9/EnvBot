@@ -1,17 +1,17 @@
-import nextcord
-import getkeys
-import os
+import nextcord, os, getkeys
 from nextcord.ext import commands
 from newsapi import NewsApiClient
+from dotenv import load_dotenv
 
 # Init bot
+load_dotenv()
 intents = nextcord.Intents.default()
 bot = commands.Bot(intents=intents)
 
 # Set keys and stuff
-newsapi = NewsApiClient(api_key=getkeys.key_list[0]) 
-bottoken = (getkeys.key_list[1]) 
-serverid = (getkeys.key_list[2]) 
+newsapi = NewsApiClient(api_key=os.getenv('API_KEY')) 
+bottoken = (os.getenv('BOT_TOKEN')) 
+serverid = (getkeys.key_list[0])
 
 # Set up slash commands
 command_list = []
